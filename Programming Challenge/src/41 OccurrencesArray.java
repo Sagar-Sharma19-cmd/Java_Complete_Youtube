@@ -4,7 +4,14 @@ class OccurrencesArray {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Welcome to Array Occurrences\n");
-        int[] numArr = ArrayUtility.inputArray();
+        System.out.print("Enter the size of the array: ");
+        int size = input.nextInt();
+        int[] numArr = new int[size]; 
+        System.out.println("Enter the elements of the array:");
+        for (int i = 0; i < size; i++) {
+            System.out.print("Element " + (i + 1) + ": ");
+            numArr[i] = input.nextInt(); // For integer input
+        }
         System.out.print("Now enter the number you want to find: ");
         int num = input.nextInt();
         int occurrences = noOfOccurrences(numArr, num);
